@@ -1,29 +1,28 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.major;
-import com.example.demo.service.majorService;
+import com.example.demo.model.Major;
+import com.example.demo.service.MajorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.LinkedList;
 import java.util.List;
 
 
 @RestController
 @RequestMapping("/api/major")
-public class majorController {
+public class MajorController {
     @Autowired
-    private majorService service;
+    private MajorService majorService;
 
     @GetMapping("/selectAll")
-    public List<major> selectAll() {
+    public List<Major> selectAll() {
         //return new LinkedList<>();
-        return service.selectAll();
+        return majorService.selectAll();
     }
 
     @PostMapping("/insert")
-    public void insert(@RequestBody major entity) {
-        service.insert(entity);
+    public void insert(@RequestBody Major entity) {
+        majorService.insert(entity);
     }
 
 }

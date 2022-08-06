@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "students")
-public class student {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -18,7 +18,7 @@ public class student {
     private int score;
 
 
-    public student(Long id, String name, String gender, String major, int score) {
+    public Student(Long id, String name, String gender, String major, int score) {
         this.id = id;
         this.name = name;
         this.gender = gender;
